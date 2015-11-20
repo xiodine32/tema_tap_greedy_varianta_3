@@ -1,5 +1,6 @@
-# tema_tap_greedy_varianta_3
-Java = awesome!
+# Tema 4 - Laborator Tehnici Avansate de Programare - Varianta 3
+
+# Cerinte
 
 1. Considerăm următorul joc pentru două persoane. Tabla de joc este o secvenţă de n numere
 întregi pozitive, iar cei doi jucători mută alternativ. Când un jucător mută, el selectează un număr ori
