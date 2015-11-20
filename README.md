@@ -1,4 +1,6 @@
-# Tema 4 - Laborator Tehnici Avansate de Programare - Varianta 3
+# Tehnici Avansate de Programare
+
+Tema 4 - Varianta 3
 
 # Cerinte
 
