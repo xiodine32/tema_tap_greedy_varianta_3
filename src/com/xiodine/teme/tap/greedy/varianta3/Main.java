@@ -1,5 +1,7 @@
 package com.xiodine.teme.tap.greedy.varianta3;
 
+import com.xiodine.teme.tap.greedy.varianta3.helpers.Menu;
+
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -12,13 +14,13 @@ public class Main {
     public static void main(String[] args) {
         while (true) {
             // create problem picker
-            IHelper helper = Helper.factory("Pick exercise number", new String[]{"Problem 1", "Problem 2", "Problem 3", "exit"});
+            Menu menuHelper = Menu.factory("Pick exercise number", new String[]{"Problem 1", "Problem 2", "Problem 3", "exit"});
 
             // pick problem
-            helper.run(System.out, new Scanner(System.in));
+            menuHelper.run(System.out, new Scanner(System.in));
 
             // get answer
-            int problema = helper.getAnswer();
+            int problema = menuHelper.getAnswer();
 
             if (problema == 3)
                 break;
@@ -46,6 +48,12 @@ public class Main {
 
             // start loading redirects
             InputStream in = selectedClass.getResourceAsStream("/input.in");
+
+            if (in == null) {
+                System.err.print("Input file not found!");
+                continue;
+            }
+
             ByteArrayOutputStream out = new ByteArrayOutputStream();
 
             // save old redirects
