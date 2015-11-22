@@ -98,7 +98,7 @@ public class Main {
 
 
         // write to output
-        System.out.println("Result: " + result);
+        System.out.println("Result:\n\n" + result + "\n");
         System.out.printf("Time elapsed: %.5fs\n", timer.getTimerDuration() / 1000000000.0);
         System.out.println();
         return true;

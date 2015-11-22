@@ -31,10 +31,23 @@ public class Main {
         }
 
         // run test
-        boolean gameRunning = true;
-        while (gameRunning) {
-
+        boolean gameRunning;
+        Boolean oldValue = null;
+        while (true) {
             gameRunning = player1.canPlay(list) && player2.canPlay(list);
+            if (!gameRunning)
+                break;
+
+            oldValue = player1.select(list, oldValue);
+            if (!oldValue) list.remove(0);
+            else list.remove(list.size() - 1);
+            oldValue = player2.select(list, oldValue);
+            if (!oldValue) list.remove(0);
+            else list.remove(list.size() - 1);
+
         }
+        System.out.println(player1);
+        System.out.println(player2);
+
     }
 }

@@ -13,12 +13,12 @@ public class Player {
     private long selectedSum = 0;
 
     public Player(TwoStrategy<Integer, ArrayList<Integer>, Boolean> playerStrategy) {
+        this.selectedElements = new ArrayList<>();
         this.playerStrategy = playerStrategy;
     }
 
     Boolean select(ArrayList<Integer> oldElements, Boolean competitionPick) {
         Boolean result = playerStrategy.select(oldElements, competitionPick);
-
         addResult(oldElements, result);
 
         return result;
@@ -35,7 +35,7 @@ public class Player {
 
         // verify item selected (left == false)
         if (!result) selectedElement = oldElements.get(0);
-        else selectedElement = oldElements.get(oldElements.get(oldElements.size() - 1));
+        else selectedElement = oldElements.get(oldElements.size() - 1);
 
         selectedElements.add(selectedElement);
         selectedSum += selectedElement;
@@ -43,7 +43,7 @@ public class Player {
     }
 
     public boolean canPlay(ArrayList<Integer> list) {
-        return !playerStrategy.canSelect(list);
+        return playerStrategy.canSelect(list);
     }
 
     @Override

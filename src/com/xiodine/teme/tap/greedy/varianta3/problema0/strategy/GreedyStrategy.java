@@ -15,11 +15,10 @@ public class GreedyStrategy implements TwoStrategy<Integer, ArrayList<Integer>, 
 
     @Override
     public Boolean select(ArrayList<Integer> oldElements, Boolean competitionPick) {
-        if (firstPick)
+        if (!firstPick)
             lastSelect = firstSelect(oldElements);
         else
             lastSelect = competitionPick;
-
         return lastSelect;
     }
 
