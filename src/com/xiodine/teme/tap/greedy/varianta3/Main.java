@@ -28,6 +28,7 @@ public class Main {
 
         if (problema == 3)
             return false;
+        problema++;
 
         // construct class
         Class<?> selectedClass = null;

@@ -1,4 +1,4 @@
-package com.xiodine.teme.tap.greedy.varianta3.problema0.strategy;
+package com.xiodine.teme.tap.greedy.varianta3.problema1.strategy;
 
 import com.xiodine.teme.tap.greedy.varianta3.helpers.TwoStrategy;
 

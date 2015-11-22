@@ -1,7 +1,7 @@
-package com.xiodine.teme.tap.greedy.varianta3.problema0;
+package com.xiodine.teme.tap.greedy.varianta3.problema1;
 
-import com.xiodine.teme.tap.greedy.varianta3.problema0.strategy.GreedyStrategy;
-import com.xiodine.teme.tap.greedy.varianta3.problema0.strategy.RandomStrategy;
+import com.xiodine.teme.tap.greedy.varianta3.problema1.strategy.GreedyStrategy;
+import com.xiodine.teme.tap.greedy.varianta3.problema1.strategy.RandomStrategy;
 
 import java.util.ArrayList;
 import java.util.Scanner;
