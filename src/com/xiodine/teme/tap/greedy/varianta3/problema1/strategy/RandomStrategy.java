@@ -25,11 +25,6 @@ public class RandomStrategy implements TwoStrategy<Integer, ArrayList<Integer>, 
     }
 
     @Override
-    public Boolean getLastSelected() {
-        return lastSelect;
-    }
-
-    @Override
     public String toString() {
         return "Random Strategy";
     }

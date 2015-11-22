@@ -1,25 +1,22 @@
-package com.xiodine.teme.tap.greedy.varianta3.problema1.strategy;
+package com.xiodine.teme.tap.greedy.varianta3.problema2.strategy;
 
-import com.xiodine.teme.tap.greedy.varianta3.helpers.TwoStrategy;
+import com.xiodine.teme.tap.greedy.varianta3.helpers.OneStrategy;
 
 import java.util.ArrayList;
 
 /**
  * File created at: 11/21/15 - 12:06 PM
  */
-public class GreedyStrategy implements TwoStrategy<Integer, ArrayList<Integer>, Boolean> {
+public class GreedyStrategy implements OneStrategy<Integer, ArrayList<Integer>, Integer> {
 
     private boolean firstPick = false;
-    private Boolean lastSelect = null;
+    private boolean selectingOdds = false;
 
 
     @Override
-    public Boolean select(ArrayList<Integer> oldElements, Boolean competitionPick) {
-        if (!firstPick)
-            lastSelect = firstSelect(oldElements);
-        else
-            lastSelect = competitionPick;
-        return lastSelect;
+    public Integer select(ArrayList<Integer> oldElements) {
+        //TODO: implement method select
+        return null;
     }
 
     /**
