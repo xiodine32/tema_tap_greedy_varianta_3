@@ -1,5 +1,6 @@
 package com.xiodine.teme.tap.greedy.varianta3.problema2;
 
+import com.xiodine.teme.tap.greedy.varianta3.helpers.OneStrategy;
 import com.xiodine.teme.tap.greedy.varianta3.problema2.strategy.GreedyStrategy;
 
 import java.util.Scanner;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 @SuppressWarnings("unused")
 public class Main {
 
-    GreedyStrategy player;
+    OneStrategy<Element, Integer> player;
 
     public Main() {
 
@@ -23,17 +24,46 @@ public class Main {
             int n = input.nextInt();
 
             // prepare
-            Element parent = null;
-            int[] freq = new int[n + 1];
-            int[] sons = new int[n + 1];
+            Element[] elements = new Element[n + 1];
+            boolean[] isChild = new boolean[n + 1];
 
             // load list
-            while (input.hasNextLine()) {
+            while (input.hasNextInt()) {
+
+                // read
                 int a = input.nextInt();
                 int b = input.nextInt();
-                //TODO: implement constructing parent element
+
+                // init
+                if (elements[a] == null)
+                    elements[a] = new Element(a);
+                if (elements[b] == null)
+                    elements[b] = new Element(b);
+
+                // set relations
+                elements[a].addElement(elements[b]);
+                isChild[b] = true;
+            }
+
+            // find root
+            Element root = null;
+            for (int index = 1; index < isChild.length; index++) {
+                if (!isChild[index]) {
+                    root = elements[index];
+                    break;
+                }
+            }
+            assert root != null;
+
+            root.recursiveUpdateHeight(0);
+
+            // set root
+            player.setElements(root);
+
+            // run algorithm
+            while (player.canSelect()) {
+                System.out.println(player + " selects: " + player.select());
             }
         }
-
     }
 }
