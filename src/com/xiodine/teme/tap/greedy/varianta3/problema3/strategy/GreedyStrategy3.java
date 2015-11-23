@@ -14,6 +14,8 @@ import java.util.Collections;
  * adds I to an already built Range (if possible)
  * if more than one, pick the one with greatest end
  * otherwise construct new Range
+ *
+ * This strategy is optimal.
  */
 public class GreedyStrategy3 implements OneStrategy<ArrayList<Range>, RangeWithHistory> {
     private ArrayList<Range> sorted = null;

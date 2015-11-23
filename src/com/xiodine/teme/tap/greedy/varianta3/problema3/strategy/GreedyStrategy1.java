@@ -13,8 +13,10 @@ import java.util.Collections;
  * For each I:
  * adds I to an already built Range (if possible)
  * otherwise construct new Range
+ *
+ * This strategy is optimal.
  */
-public class GreedyStrategy implements OneStrategy<ArrayList<Range>, RangeWithHistory> {
+public class GreedyStrategy1 implements OneStrategy<ArrayList<Range>, RangeWithHistory> {
     private ArrayList<Range> sorted = null;
     private ArrayList<RangeWithHistory> ranges = null;
 

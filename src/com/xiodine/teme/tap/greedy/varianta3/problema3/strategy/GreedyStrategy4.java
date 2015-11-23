@@ -11,6 +11,8 @@ import java.util.ArrayList;
  * Using "Spectacle Problem":
  * construct while have elements best Range
  * remove elements from list
+ *
+ * This strategy is optimal.
  */
 public class GreedyStrategy4 implements OneStrategy<ArrayList<Range>, RangeWithHistory> {
 

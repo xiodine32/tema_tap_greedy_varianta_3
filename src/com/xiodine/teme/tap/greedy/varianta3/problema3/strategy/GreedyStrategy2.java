@@ -13,6 +13,9 @@ import java.util.Collections;
  * For each I:
  * adds I to an already built Range (if possible)
  * otherwise construct new Range
+ *
+ * This strategy isn't optimal, because it could add to the "wrong" Range, and thus waste time.
+ * The input file exemplifies this.
  */
 public class GreedyStrategy2 implements OneStrategy<ArrayList<Range>, RangeWithHistory> {
     private ArrayList<Range> sorted = null;

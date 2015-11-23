@@ -1,7 +1,7 @@
 package com.xiodine.teme.tap.greedy.varianta3.problema3;
 
 import com.xiodine.teme.tap.greedy.varianta3.helpers.OneStrategy;
-import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy;
+import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy1;
 import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy2;
 import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy3;
 import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy4;
@@ -20,7 +20,7 @@ public class Main {
     public Main() {
 
         // load strategies
-        players.add(new GreedyStrategy());
+        players.add(new GreedyStrategy1());
         players.add(new GreedyStrategy2());
         players.add(new GreedyStrategy3());
         players.add(new GreedyStrategy4());
