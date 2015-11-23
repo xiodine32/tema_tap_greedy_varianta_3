@@ -1,13 +1,14 @@
 package com.xiodine.teme.tap.greedy.varianta3.problema3;
 
 /**
- * File created at: 11/22/15 - 9:06 PM
+ * Range defined as such: [start, end]
  */
-public class Element {
+public class Range {
+
     private int start;
     private int end;
 
-    public Element(int start, int end) {
+    public Range(int start, int end) {
         this.start = start;
         this.end = end;
     }
@@ -21,11 +22,16 @@ public class Element {
     }
 
     public int getDuration() {
-        return end - start;
+        return end - start + 1;
     }
 
     @Override
     public String toString() {
-        return String.format("[%d - %d]", start, end);
+        return String.format("%d - %d", start, end);
+    }
+
+    public void unite(Range range) {
+        start = range.start > start ? start : range.start;
+        end = range.end < end ? end : range.end;
     }
 }

@@ -4,6 +4,7 @@ import com.xiodine.teme.tap.greedy.varianta3.helpers.OneStrategy;
 import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy;
 import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy2;
 import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy3;
+import com.xiodine.teme.tap.greedy.varianta3.problema3.strategy.GreedyStrategy4;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ import java.util.Scanner;
 @SuppressWarnings("unused")
 public class Main {
 
-    ArrayList<OneStrategy<ArrayList<Element>, Integer>> players = new ArrayList<>();
+    ArrayList<OneStrategy<ArrayList<Range>, RangeWithHistory>> players = new ArrayList<>();
 
     public Main() {
 
@@ -22,6 +23,7 @@ public class Main {
         players.add(new GreedyStrategy());
         players.add(new GreedyStrategy2());
         players.add(new GreedyStrategy3());
+        players.add(new GreedyStrategy4());
 
 
         try (Scanner input = new Scanner(System.in)) {
@@ -29,7 +31,7 @@ public class Main {
             int n = input.nextInt();
 
             // prepare
-            ArrayList<Element> elements = new ArrayList<>();
+            ArrayList<Range> ranges = new ArrayList<>();
 
 
             // load list
@@ -39,17 +41,26 @@ public class Main {
                 int a = input.nextInt();
                 int b = input.nextInt();
 
-                elements.add(new Element(a, b));
+                // add range
+                ranges.add(new Range(a, b));
             }
 
-            for (OneStrategy<ArrayList<Element>, Integer> player : players) {
+            System.out.println("Beginning with: " + ranges + "\n");
+
+            for (OneStrategy<ArrayList<Range>, RangeWithHistory> player : players) {
+
+                System.out.println("Running " + player + ":\n");
+
                 // prepare player
-                player.setElements(elements);
+                player.setElements(ranges);
 
                 // run algorithm
                 while (player.canSelect()) {
-                    System.out.println(player + " selects: " + player.select());
+                    System.out.println(player.select());
                 }
+
+
+                System.out.println();
             }
         }
     }
